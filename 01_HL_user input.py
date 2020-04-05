@@ -7,12 +7,12 @@
 # check that guess is between lowest and highest
 
 # Number checking function goes here
-def intcheck (question, low=None, high=None):
+def intcheck(question, low=None, high=None):
 
     # error messages
     if low is not None and high is not None:
-        error = "Please enter an integer between {} and {}" \
-        "(inclusive)".format(low, high)
+            error = "Please enter an integer between {} and {}" \
+            "(inclusive)".format(low, high)
 
     elif low is not None and high is None:
         error = "please enter an integer that is more than or " \
@@ -53,7 +53,7 @@ highest = intcheck("High Number:", lowest + 1)
 rounds = intcheck("Rounds ", 1)
 guess = intcheck("Guess:" ,lowest, highest)
 
-print("Hi Anshika, this is a random change to your file")
+
 
 
 
