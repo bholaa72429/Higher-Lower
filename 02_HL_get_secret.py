@@ -8,3 +8,4 @@ HIGH = 4
 for item in range (1, 21):
     secret = random.randint(LOW, HIGH)
     print(secret, end="\t")
+
