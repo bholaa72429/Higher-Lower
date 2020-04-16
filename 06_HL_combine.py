@@ -8,7 +8,7 @@
 # HL components 5 - Prevents  duplicates guesses
 
 SECRET = 7
-GUESSES_ALLOWED = 5
+GUESSES_ALLOWED = 4
 
 already_guessed = []
 guesses_left = GUESSES_ALLOWED
@@ -49,7 +49,8 @@ if guess == SECRET:
         print("Amazing!  You got it in one guess")
     #If user has had more than one guess...
     else:
-        print("Congratulation ! you have guessed it right!!")
+        print("Congratulation ! you have guessed it right in {} guesses".format(len(already_guessed)))
+        num_won += 1
 #User has run out of guesses (and loses the game)
 else:
     print("Sorry- You lose this round as you have run out of guesses")
