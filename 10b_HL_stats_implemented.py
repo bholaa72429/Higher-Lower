@@ -7,7 +7,10 @@
 SECRET = 7
 GUESSES_ALLOWED = 4
 rounds = int(input("How many rounds ? "))
-game_state = []
+game_stats = []
+
+num_won = 0
+rounds_played = 0
 
 while rounds_played < rounds:
     guess = ""
@@ -36,13 +39,13 @@ while rounds_played < rounds:
         if guess == SECRET and guesses_left ==3:
          print("Amazing!  You got it in one guess")
         else:
-         print("Congratulation ! you have guessed it right in {} guesses".format(GUESSES_ALLOWED))
+           print("Congratulation ! you have guessed it right in {} guesses".format(GUESSES_ALLOWED))
         num_won += 1
     else:
         print("Sorry- You lose this round as you have run out of guesses")
 
-    game_state.append(GUESSES_ALLOWED - guesses_left)
-    print("Won: {} \t \t Lost: {}".format(num_won, rounds_played - num_won + 1))
+    game_stats.append(GUESSES_ALLOWED - guesses_left)
+    print("Won: {} \t | \t Lost: {}".format(num_won, rounds_played - num_won + 1))
     rounds_played += 1
 
 # print each round outcome
@@ -56,7 +59,20 @@ for item in game_stats:
         status = "lost, run out of guesses"
     else:
         status = "won"
+
     print("Rounds {}: {} ({})".format(list_count, item, status))
     list_count += 1
+
+# Calculates statistics
+game_stats.sort()
+best = game_stats[0]
+worst = game_stats[-1]
+average = sum(game_stats)/len(game_stats)
+
+print()
+print("*** Summary Statistics ***")
+print("Best: {}".format(best))
+print("Worst: {}".format(worst))
+print("Average: {:.2f}".format(average))
 
 
