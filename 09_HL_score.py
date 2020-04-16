@@ -44,6 +44,7 @@ while rounds_played < rounds:
     else:
         print("Sorry- You lose this round as you have run out of guesses")
 
-    print("Won: {} \t \t Lost: {}".format(num_won, rounds_played - num_won + 1))
+    print("Won: {} \t | \t Lost: {}".format(num_won, rounds_played - num_won + 1))
     rounds_played += 1
+
 
