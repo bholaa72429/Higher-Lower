@@ -1,13 +1,5 @@
 import random
 
-def h1_statement(statement, char):
-    print()
-    print(char*len(statement))
-    print(statement)
-    print(char*len(statement))
-    print
-
-
 def intcheck(question, low=None, high=None):
 
     # error messages
@@ -44,26 +36,6 @@ def intcheck(question, low=None, high=None):
         except ValueError:
             print(error)
             continue
-
-print("*** Welcome to the Higher Lower Game ****")
-print()
-print("To Play, enter the number of rounds you would like to play")
-print
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 # HL component 10 - Loop Game
 
@@ -107,28 +79,28 @@ while keep_going == "":
 
             if guesses_left >= 1:
                 if guess > SECRET:
-                    h1_statement("^^ Too high, try a lower number.  |  Guesses Left: {}^^".format(guesses_left), "^")
+                   print(" Too high, try a lower number.  |  Guesses Left: {}".format(guesses_left) )
                     #print("Too high, try a lower number. Guesses Left: {}".format(guesses_left))
 
                 elif guess < SECRET:
-                    h1_statement("^^ Too low, try a higher number.  |  Guesses Left: {}^^".format(guesses_left), "^")
+                    print(" Too low, try a higher number.  |  Guesses Left: {}".format(guesses_left))
                     #print("Too low, try a higher number. Guesses Left: {}".format(guesses_left))
 
 
             else:
 
                 if guess > SECRET:
-                    h1_statement("^^ Too HIGH !!!! ^^", "^")
+                    print(" Too HIGH !!!! ")
                     #print("Too high !")
                 elif guess < SECRET:
-                    h1_statement("^^ Too LOW !!!! ^^", "^")
+                    print(" Too LOW !!!! ")
                     #print("Too low! ")
 
         if guess == SECRET:
             if guess == SECRET and guesses_left ==3:
-                h1_statement("***Amazing!  You got it in one guess***","*")
+                print("Amazing!  You got it in one guess")
             else:
-                 h1_statement("###Congratulation ! you have guessed it right in {} guesses###".format(GUESSES_ALLOWED),"#")
+                 print("Congratulation ! you have guessed it right in {} guesses".format(GUESSES_ALLOWED))
             num_won += 1
         else:
             print("Sorry- You lose this round as you have run out of guesses")
